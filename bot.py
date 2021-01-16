@@ -13,7 +13,7 @@ HEADERS = {
 
 bot = telebot.TeleBot('1416836323:AAE6msCm5oT6ty09aHZfQwrQnWBSytqIDnY');
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
-keyboard1.row('Новости','Статистика COVID19',)
+keyboard1.row('Новости','Статистика COVID19', 'Халява')
 @bot.message_handler(commands=['start'])
 def start_message(message):
     bot.send_message(message.chat.id, 'Привет, чем я могу тебе помочь?', reply_markup=keyboard1)
