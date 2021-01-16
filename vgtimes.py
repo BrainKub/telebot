@@ -11,5 +11,5 @@ def get_freebie(bot, message):
     soup = BeautifulSoup(response.content, 'html.parser')
     texts = soup.findAll('a', '{favoritesnew}')
     for i in range(len(texts[:-16]), -1, -1):
-        txt = str(i + 1) + ') ' + texts[i].text
+        txt = str(i + 1) + ') Источник' + texts[i].text
         bot.send_message(message.chat.id, '<a href="{}">{}</a>'.format(texts[i]['href'], txt), parse_mode = 'html')
